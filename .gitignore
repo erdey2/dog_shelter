@@ -1,0 +1,46 @@
+# byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Django-specific
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Virtual environments
+*.env
+*.venv
+*.myenv
+env/
+venv/
+myenv/
+ENV/
+env.bak/
+venv.bak/
+myenv.bak/
+
+# Pycharm project files
+.idea/
+
+# logs
+*.log
+*.out
+*.err
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Testing and Coverage
+.coverage
+*.cover
+.tox/
+.nox/
+pytest_cache/
+.pytest_cache/
+
+# Miscellaneous
+*.bak
+*.tmp
