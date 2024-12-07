@@ -3,6 +3,6 @@ from . import models
 # Register your models here.
 
 
-admin.AdminSite.register(models.Shelter)
-admin.AdminSite.register(models.Dog)
+admin.site.register(models.Shelter)
+admin.site.register(models.Dog)
 
