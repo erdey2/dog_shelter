@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shelter List/title>
-</head>
-<body>
-        <h1> Shelter List </h1>
-        <table>
-        <tr>
-        <th> Id </th>
-        <th> Name </th>
-        <th> Location </th>
-        </tr>
-        <tr>
-        <% for shelter in shelters %>
-        <td> {{shelter.id }} </td>
-        <td> {{shelter.name}} </td>
-        <td> {{shelter.location}} </td>
-        <% endfor %>
-        </tr>
-        </table>
+{% extends 'base.html' %}
+{% block title %} Shelters List {% endblock %}
 
-</body>
-</html>
+{% block body %}
+<h1> Shelter List </h1>
+
+{% if shelters %}
+<table class="table">
+        <thead>
+        <tr>
+                <th scope="col"> Id </th>
+                <th scope="col"> Name </th>
+                <th scope="col"> Location </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for shelter in shelters %}
+        <tr>
+                <th> {{shelter.id }} </th>
+                <td> {{shelter.name}} </td>
+                <td> {{shelter.location}} </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+</table>
+<p> We have {{shelters|length}} shelters available </p>
+{% else %}
+<h1>No sherters to display! </h1>
+{% endif %}
+{% endblock %}
