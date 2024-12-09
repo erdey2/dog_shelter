@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shelter List/title>
+</head>
+<body>
+        <h1> Shelter List </h1>
+        <table>
+        <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Location </th>
+        </tr>
+        <tr>
+        <% for shelter in shelters %>
+        <td> {{shelter.id }} </td>
+        <td> {{shelter.name}} </td>
+        <td> {{shelter.location}} </td>
+        <% endfor %>
+        </tr>
+        </table>
+
+</body>
+</html>
