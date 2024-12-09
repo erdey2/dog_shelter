@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Shelter Details {% endblock %}
 
-</body>
-</html>
+{% block body %}
+<h1> Shelter Detail </h1>
+<table class="table">
+        <thead>
+        <tr>
+                <th scope="col"> Id </th>
+                <th scope="col"> Name </th>
+                <th scope="col"> Location </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                <th> {{shelter.id }} </th>
+                <td> {{shelter.name}} </td>
+                <td> {{shelter.location}} </td>
+        </tr>
+        </tbody>
+
+</table>
+{% endblock %}
