@@ -8,7 +8,7 @@
 {% for shelter in shelters %}
 <ul class="list-group">
         <li class="list-group-item">
-                <a href="{% url 'sherter_detail.html' shelter.pk %}">
+                <a href="{% url 'shelter_detail' shelter.pk %}">
                         {{shelter.name}}
 
                 </a>
