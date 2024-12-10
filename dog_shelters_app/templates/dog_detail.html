@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Detail for {{dog.name}} {% endblock %}
+{% block body %}
+<p><a href="{% url 'dogs_list' %}">Go Back to List </a></p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Taken at</th>
+        <th>Lives In</th>
+    </tr>
+    <tr>
+        <td>{{dog.name}} </td>
+        <td>{{dog.description}} </td>
+        <td>{{dog.intake_date}} </td>
+        <td>{{dog.shelter}} </td>
+    </tr>
+    </thead>
+</table>
 
-</body>
-</html>
+{% endblock %}
