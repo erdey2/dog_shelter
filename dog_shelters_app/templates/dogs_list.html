@@ -2,6 +2,7 @@
 {% block title %} Dog List {% endblock %}
 
 {% block body %}
+<p><a href="{% url 'index' %}">Back to home</a></p>
 <div class="container"> List of Registered Dogs </div>
 {% if dogs %}
 <ul class="list-group">
