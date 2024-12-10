@@ -10,6 +10,7 @@ class Shelter(models.Model):
         return self.name
 
 class Dog(models.Model):
+    objects = None
     shelter = models.ForeignKey(Shelter, on_delete=models.PROTECT)
     name = models.CharField(max_length=200)
     description = models.TextField()
