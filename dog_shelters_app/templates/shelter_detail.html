@@ -2,7 +2,10 @@
 {% block title %} Shelter Details {% endblock %}
 
 {% block body %}
+<p> <a href="{% url 'shelters_list' %}">Back to shelters list</a> </p>
+
 <h1> Shelter Detail </h1>
+{% if shelter %}
 <table class="table">
         <thead>
         <tr>
@@ -20,4 +23,7 @@
         </tbody>
 
 </table>
+{% else %}
+<p>shelter with Id {{shelter.id}} not found </p>
+{% endif %}
 {% endblock %}
