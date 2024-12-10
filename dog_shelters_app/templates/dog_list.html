@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} Dog List {% endblock %}
+
+{% block body %}
+<div class="container"> Dog List </div>
+
+{% if dogs %}
+<table class="table">
+        <thead>
+        <tr>
+                <th scope="col"> Name </th>
+                <th scope="col"> Description </th>
+                <th scope="col"> Intake Date </th>
+                <th scope="col"> Lives In </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for dog in dogs %}
+        <tr>
+                <th> {{dog.name }} </th>
+                <td> {{dog.description}} </td>
+                <td> {{dog.intake_date}} </td>
+                <td>{{dog.shelter}} </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+</table>
+<p> We have {{dogs|length}} dogs available </p>
+{% else %}
+<h1>No dogs to display! </h1>
+{% endif %}
+{% endblock %}
