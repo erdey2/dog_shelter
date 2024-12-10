@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Dog List {% endblock %}
+
+{% block body %}
+<div class="container"> List of Registered Dogs </div>
+{% if dogs %}
+<ul class="list-group">
+        {% for dog in dogs %}
+        <li class="list-group-item">
+                <a href="{% url 'dog_detail' dog.pk %}">
+                        {{dog.name}}
+                </a>
+        </li>
+        {% endfor %}
+</ul>
+
+<p>  total dogs available: {{dogs|length}} </p>
+{% else %}
+<h1>No dogs to display! </h1>
+{% endif %}
+{% endblock %}
