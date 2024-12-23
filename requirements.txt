@@ -10,3 +10,5 @@ pycodestyle==2.12.1
 pylint==3.3.2
 sqlparse==0.5.2
 tomlkit==0.13.2
+django-crispy-forms
+djangorestframework
