@@ -1,0 +1,27 @@
+body
+{
+    left-margin: 10px;
+    top-margin: 10px;
+    font-weight: 500;
+
+}
+p
+{
+    margin: 10px;
+}
+
+footer
+{
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #123456;
+}
+
+form
+{
+    margin: 10px;
+}
+form button
+{
+    margin: 5px;
+}
