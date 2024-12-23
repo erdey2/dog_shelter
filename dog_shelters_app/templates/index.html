@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} Home page {% endblock %}
 {% block body %}
-<p>{{today}} </p>
+
 <ul class="list-group">
     <li class="list-group-item">
-        <a href=" {% url 'shelters_list' %}">View shelters</a>
-    </li>
-    <li class="list-group-item">
-        <a href=" {% url 'dogs_list' %}">View Dogs</a>
+        <a href=" {% url 'shelters_list' %}">View shelters</a> |
+        <a href=" {% url 'dogs_list' %}">View Dogs</a> |
+        <a href=" {% url 'dog_register' %}">Add Dog</a> |
     </li>
 
 </ul>
