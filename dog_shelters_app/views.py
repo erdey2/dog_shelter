@@ -2,8 +2,18 @@ from django.shortcuts import render, get_object_or_404
 from dog_shelters_app.models import Shelter, Dog
 from . import models
 from django.views import generic
+from django.urls import reverse_lazy
+from rest_framework import generics
+from .serializers import DogSerializer, ShelterSerializer
+
 
 # Create your views here.
+def login(request):
+    return render(request, template_name='login.html')
+
+def index(request):
+    return render(request, 'index.html')
+
 def shelters_list(request):
     shelters = Shelter.objects.all()
     context = {'shelters': shelters}
@@ -26,4 +36,32 @@ class DogsListView(generic.ListView):
 
     def get_queryset(self):
         return Dog.objects.all()
+
+class DogCreateView(generic.CreateView):
+    model = Dog
+    template_name = 'dog_form.html'
+    fields = ['name', 'description', 'shelter']
+
+class DogUpdateView(generic.UpdateView):
+    model = Dog
+    template_name = 'dog_form.html'
+    fields = ['name', 'description', 'shelter']
+
+class DogDeleteView(generic.DeleteView):
+    model = Dog
+    success_url = reverse_lazy('dogs_list')
+
+# api
+class DogListView(generics.ListCreateAPIView):
+    queryset = Dog.objects.all()
+    serializer_class = DogSerializer
+
+class ShelterListView(generics.ListCreateAPIView):
+    queryset = Shelter.objects.all()
+    serializer_class = ShelterSerializer
+
+
+
+
+
 
