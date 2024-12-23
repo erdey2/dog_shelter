@@ -2,21 +2,30 @@
 {% block title %} Dog List {% endblock %}
 
 {% block body %}
-<p><a href="{% url 'index' %}">Back to home</a></p>
-<div class="container"> List of Registered Dogs </div>
+<p><a class="link" href="{% url 'index' %}">Back to home</a></p>
+<h2 class="my-4">List of Registered Dogs</h2>
+
 {% if dogs %}
 <ul class="list-group">
-        {% for dog in dogs %}
-        <li class="list-group-item">
-                <a href="{% url 'dog_detail' dog.pk %}">
-                        {{dog.name}}
-                </a>
-        </li>
-        {% endfor %}
+    {% for dog in dogs %}
+    <li class="list-group-item">
+        <a href="{% url 'dog_detail' dog.pk %}" aria-label="View details of {{ dog.name }}">
+            {{ dog.name }}
+        </a>
+        <span>|</span>
+        <a href="{% url 'dog_update' dog.pk %}">Update</a>
+        <span>|</span>
+        <a href="{% url 'dog_delete' dog.pk %}" class="text-danger"
+           onclick="return confirm('Are you sure you want to delete {{ dog.name }}?')">
+            Delete
+        </a>
+    </li>
+    {% endfor %}
 </ul>
-
-<p>  total dogs available: {{dogs|length}} </p>
+<p>Total dogs available: {{ dogs|length }}</p>
 {% else %}
-<h1>No dogs to display! </h1>
+<div class="alert alert-warning" role="alert">
+    No dogs to display!
+</div>
 {% endif %}
 {% endblock %}
