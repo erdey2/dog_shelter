@@ -25,12 +25,17 @@ SECRET_KEY = 'django-insecure-ouic18m))de62vs2e9%rzyq=ai%_%&hg=&t^_95brtdg4jbgh&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'dog_shelters_app.apps.DogSheltersAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -61,6 +66,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'dog_shelters_app.context_processor.current_year',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -116,7 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
