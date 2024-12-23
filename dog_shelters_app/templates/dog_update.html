@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html'}
+{% block title %} {{ dog.name }} {% endblock %}
+{% block body %}
+<h2>Update {{dog.name}} </h2>
 
-</body>
-</html>
+{% load crispy_forms_tags %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit"  class="btn btn-primary">Update</button>
+
+</form>
+{% endblock %}
